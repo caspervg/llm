@@ -74,6 +74,7 @@ public class DownloadCommandExecutor implements CommandExecutor {
         System.out.println(String.format("Are you sure you want to download %s LEX files? [y/N]", entryList.size()));
         Scanner inputScanner = new Scanner(System.in);
         String resp = inputScanner.nextLine();
+        inputScanner.close();
         if (StringUtils.equalsIgnoreCase(resp, "y")) {
             ExecutorService executorService = Executors.newFixedThreadPool(5);
             for (DownloadEntry entry : entryList) {
@@ -85,6 +86,7 @@ public class DownloadCommandExecutor implements CommandExecutor {
                 }
             }
         }
+        System.out.println("Done downloading. Enjoy the files!");
         return 1;
     }
 
