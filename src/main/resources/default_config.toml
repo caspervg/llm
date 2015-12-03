@@ -1,0 +1,6 @@
+version = "0.0.1"
+
+username = ""
+password = ""
+
+concurrent_downloads = 3
